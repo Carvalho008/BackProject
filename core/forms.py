@@ -4,4 +4,4 @@ from .models import Cliente
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ('nome', 'email', 'whatsapp')  # Inclui todos os campos do modelo
+        fields = '__all__'
