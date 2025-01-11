@@ -7,6 +7,10 @@
     --dark-w: #F7EBDF;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -92,10 +96,11 @@ body {
     display: flex;
     flex-direction: row;
     gap: 15px;
+    overflow-x: auto;
 }
 
 .img-holder img {
-    height: 100px;
+    height: 130px;
     width: 100px;
     border: 1.5px solid var(--t);
     border-radius: 5px;
@@ -134,6 +139,14 @@ body {
     overflow: hidden;
 }
 
+.form-container ul,
+li {
+    text-align: center;
+    list-style-type: none;
+    font-size: small;
+    font-weight: normal;
+}
+
 .form-container h3 {
     color: var(--b);
 }
@@ -165,9 +178,170 @@ body {
     color: white;
     cursor: pointer;
     transition: .5s;
+    margin-top: 5px;
 }
 
 .form-container form button:hover {
     background-color: var(--dark-t);
     transition: .5s;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: smaller;
+    color: white;
+    background-color: black;
+    padding: 12px 0;
+}
+/* Responsividade */
+@media (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .main-conteudo {
+        border-right: none;
+    }
+
+    .introducao h3 {
+        font-size: medium;
+    }
+
+    .introducao p {
+        font-size: small;
+        width: 280px;
+    }
+
+    .introducao img {
+        height: 180px;
+    }
+
+    .text-box {
+        gap: 5px;
+        padding: 0px 10px 0px;
+    }
+
+    .destaques h3{
+        font-size: medium;
+    }
+
+    .cards {
+        padding: 25px 20px 25px 20px;
+        border-bottom: 2.5px solid #c3c3c3;
+    }
+
+    .card {
+        padding: 15px 10px;
+    }
+
+    .card b,p{
+        font-size: small;
+    }
+
+    .lateral-conteudo {
+        margin-bottom: 40px;
+    }
+
+    .form-container {
+        padding: 20px 10px;
+        gap: 10px;
+    }
+    
+    .form-container ul,
+    li {
+        font-size: smaller;
+    }
+
+    .form-container h2 {
+        font-size: large;
+    }
+    
+    .form-container h3 {
+        font-size: medium;
+    }
+    
+    .form-container form {
+        gap: 3px;
+        font-size: small;
+    }
+    
+    .form-container form input {
+        font-size: small;
+    }
+    
+    .form-container form button {
+        font-size: small;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .introducao img {
+        height: 150px;
+    }
+
+    .introducao p {
+        font-size: x-small;
+        width: 200px;
+    }
+
+    .text-box p {
+        width: 250px;
+    }
+
+    .destaques h3{
+        font-size: small;
+    }
+
+    .img-holder img {
+        height: 100px;
+        width: 80px;
+    }
+
+    .cards {
+        padding: 25px 10px 25px 10px;
+    }
+
+    .card {
+        padding: 10px 5px;
+        gap: 8px;
+    }
+
+    .card b,p{
+        font-size: x-small;
+    }
+
+    .form-container {
+        padding: 20px 5px;
+    }
+    
+    .form-container ul,
+    li {
+        font-size: x-small;
+    }
+
+    .form-container h2 {
+        font-size: medium;
+    }
+    
+    .form-container h3 {
+        font-size: small;
+    }
+    
+    .form-container form {
+        gap: 3px;
+        font-size: x-small;
+    }
+    
+    .form-container form input {
+        font-size: x-small;
+    }
+    
+    .form-container form button {
+        font-size: x-small;
+    }
+    
 }
