@@ -8,6 +8,353 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>EcoBooks</title>
     <style>
+        :root {
+    --dark-b: #372414;
+    --b: #674831;
+    --light-b: #855A3C;
+    --t: #D7BE82;
+    --dark-t: #B7A087;
+    --dark-w: #F7EBDF;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    min-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top, #7F5338 0%, #BB996B 50%, #B59F87 100%);
+}
+
+.tabbar {
+    padding: 20px 25px;
+    color: white;
+    background-color: var(--dark-b);
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 0;
+    border-right: 3px solid var(--light-b);
+    overflow: hidden;
+    gap: 30px;
+
+}
+
+.introducao {
+    display: flex;
+    flex-direction: row;
+    border: 1.5px solid var(--b);
+    border-radius: 5px;
+    overflow: hidden;
+    align-items: center;
+    background-color: white;
+
+}
+
+.introducao img {
+    height: 240px;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 20px 0px;
+}
+
+.text-box p {
+    width: 320px;
+}
+
+.lateral-conteudo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.destaques {
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 25px;
+    color: white;
+    background-color: var(--b);
+
+}
+
+.img-holder {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.img-holder img {
+    height: 130px;
+    width: 100px;
+    border: 1.5px solid var(--t);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 25px 20px 0px 20px;
+    border-top: 2.5px solid #c3c3c3;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 20px;
+    border: 1.5px solid #c3c3c3;
+    background-color: white;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 18px;
+    padding: 30px 20px;
+    border: 1px solid black;
+    background: var(--dark-w);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-container ul,
+li {
+    text-align: center;
+    list-style-type: none;
+    font-size: small;
+    font-weight: normal;
+}
+
+.form-container h3 {
+    color: var(--b);
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.form-container form input {
+    font-size: medium;
+    padding: 5px;
+    border: 1px solid var(--dark-t);
+    border-radius: 3px;
+    outline: none;
+}
+
+.form-container form button {
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--t);
+    border: 1px solid var(--dark-t);
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+    margin-top: 5px;
+}
+
+.form-container form button:hover {
+    background-color: var(--dark-t);
+    transition: .5s;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: smaller;
+    color: white;
+    background-color: black;
+    padding: 12px 0;
+}
+/* Responsividade */
+@media (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .main-conteudo {
+        border-right: none;
+    }
+
+    .introducao h3 {
+        font-size: medium;
+    }
+
+    .introducao p {
+        font-size: small;
+        width: 280px;
+    }
+
+    .introducao img {
+        height: 180px;
+    }
+
+    .text-box {
+        gap: 5px;
+        padding: 0px 10px 0px;
+    }
+
+    .destaques h3{
+        font-size: medium;
+    }
+
+    .cards {
+        padding: 25px 20px 25px 20px;
+        border-bottom: 2.5px solid #c3c3c3;
+    }
+
+    .card {
+        padding: 15px 10px;
+    }
+
+    .card b,p{
+        font-size: small;
+    }
+
+    .lateral-conteudo {
+        margin-bottom: 40px;
+    }
+
+    .form-container {
+        padding: 20px 10px;
+        gap: 10px;
+    }
+    
+    .form-container ul,
+    li {
+        font-size: smaller;
+    }
+
+    .form-container h2 {
+        font-size: large;
+    }
+    
+    .form-container h3 {
+        font-size: medium;
+    }
+    
+    .form-container form {
+        gap: 3px;
+        font-size: small;
+    }
+    
+    .form-container form input {
+        font-size: small;
+    }
+    
+    .form-container form button {
+        font-size: small;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .introducao img {
+        height: 150px;
+    }
+
+    .introducao p {
+        font-size: x-small;
+        width: 200px;
+    }
+
+    .text-box p {
+        width: 250px;
+    }
+
+    .destaques h3{
+        font-size: small;
+    }
+
+    .img-holder img {
+        height: 100px;
+        width: 80px;
+    }
+
+    .cards {
+        padding: 25px 10px 25px 10px;
+    }
+
+    .card {
+        padding: 10px 5px;
+        gap: 8px;
+    }
+
+    .card b,p{
+        font-size: x-small;
+    }
+
+    .form-container {
+        padding: 20px 5px;
+    }
+    
+    .form-container ul,
+    li {
+        font-size: x-small;
+    }
+
+    .form-container h2 {
+        font-size: medium;
+    }
+    
+    .form-container h3 {
+        font-size: small;
+    }
+    
+    .form-container form {
+        gap: 3px;
+        font-size: x-small;
+    }
+    
+    .form-container form input {
+        font-size: x-small;
+    }
+    
+    .form-container form button {
+        font-size: x-small;
+    }
+    
+}
     </style>
 </head>
 
